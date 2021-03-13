@@ -1,0 +1,45 @@
+.header{
+    font-size: 30px;
+    font-family: "poppins";
+    margin-bottom: 30px;
+    font-weight: bolder;
+    margin-top: 60px;
+}
+
+.row{
+    width: 100%;
+}
+
+.btn-txt{
+    margin-left: -66px;
+}
+
+.top-spacing {
+    margin-top: -8px;
+    font-size: 20px;
+}
+
+mat-icon{
+    font-size: 20px !important;
+    margin-top: 15px;
+}
+
+.btn-notification{
+    margin-left: -94px;
+}
+
+mat-icon{
+    width: 30px;
+    font-size: 39px;
+    margin-bottom: 14px;
+}
+
+table{
+    width: 81%;
+    margin-top: 68px;
+    margin-left: 7%;
+}
+
+a{
+    text-decoration: none;
+}

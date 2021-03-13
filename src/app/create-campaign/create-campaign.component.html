@@ -1,0 +1,24 @@
+<div class="row c">
+    <div class="col-md-6 mx-auto">
+        <div class="card rounded">
+            <div class="card-header">
+                <h3>Post Campaign</h3>
+            </div>
+            <div class="card-body">
+                <form class="form">
+                    <div class="form-group">
+                        <!-- <mat-form-fiield> -->
+                        <label for="">Name</label>
+                        <input [(ngModel)]="campaign.campName" name="Name" type="text" class="form-control rounded-0" required>
+                        <!-- </mat-form-fiield> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="">Status</label>
+                        <input [(ngModel)]="campaign.status"  name="status" type="text" class=" form-control rounded-0" required>
+                    </div>
+                    <button (click)="registerCamp()"  type="button" class="btn btn-primary float-right">Post</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
