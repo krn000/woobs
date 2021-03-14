@@ -6,7 +6,7 @@ import { CreateCampaignComponent } from '../create-campaign/create-campaign.comp
 
 
 export interface response {
-  _id: String,
+  _id: string,
   campName: String,
   status: String
 };

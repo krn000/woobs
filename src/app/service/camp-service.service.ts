@@ -19,17 +19,17 @@ export class CampServiceService {
     return this.http.post<any>(this._campaignUrl+'/campaign', model)
   }
   getcamp(id:string, model:any){
-    return this.http.get<any>(this._campaignUrl + '/edit-camp/'+ id , model);
+    return this.http.get<any>(this._campaignUrl + '/campaign/'+ id , model);
   }
 
-  update(id: string, body: any): Observable<Campaign> {
-    return this.http.put<Campaign>(this._campaignUrl + '/edit-camp/' + id, JSON.stringify(body))
+  update(id: string, model:any): Observable<Campaign> {
+    return this.http.patch<any>(this._campaignUrl + '/campaign/' + id, JSON.stringify(model))
     .pipe(
       catchError(this.errorHandler)
     )
   }
 
-  delete(id:String){
+  delete(id: string){
     return this.http.delete<Campaign>(this._campaignUrl + '/campaign/' + id)
     .pipe(
       catchError(this.errorHandler)
