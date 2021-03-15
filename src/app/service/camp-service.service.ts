@@ -15,34 +15,28 @@ export class CampServiceService {
   getCampaign(){
     return this.http.get<any>(this._campaignUrl+'/campaign')
   }
+  
   postCampaign(model:any){
     return this.http.post<any>(this._campaignUrl+'/campaign', model)
   }
+
   getcamp(id:string, model:any){
     return this.http.get<any>(this._campaignUrl + '/campaign/'+ id , model);
   }
 
   update(id: string, model:any): Observable<Campaign> {
-    return this.http.patch<any>(this._campaignUrl + '/campaign/' + id, JSON.stringify(model))
-    .pipe(
-      catchError(this.errorHandler)
-    )
+    return this.http.put<any>(this._campaignUrl + '/campaign/' + id, model)
   }
 
   delete(id: string){
-    return this.http.delete<Campaign>(this._campaignUrl + '/campaign/' + id)
-    .pipe(
-      catchError(this.errorHandler)
-    )
+    return this.http.delete<string>(this._campaignUrl + '/campaign/' + id)
   }
   
   errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {
-      // Get client-side error
       errorMessage = error.error.message;
     } else {
-      // Get server-side error
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     console.log(errorMessage);

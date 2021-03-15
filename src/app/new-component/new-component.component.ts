@@ -16,9 +16,11 @@ export class NewComponentComponent implements OnInit {
   campaign: any = {}
   campId: string = ''
   private apiURL = "http://localhost:3000";
-
-  name: String = '';
-  status: String = '';
+  model:any = {
+    campName: this.campaign.campName,
+    status: this.campaign.status 
+  }
+ 
   message: string = '';
 
   constructor(private service: CampServiceService,
@@ -38,16 +40,18 @@ export class NewComponentComponent implements OnInit {
     this.campaign = await this.service.getcamp(this.activatedRoute.snapshot.params.id, this.campaign)
       .toPromise();
     for (let camp of this.campaign) {
-      this.name = camp.campName;
-      this.status = camp.status;
+      this.model.campName = camp.campName;
+      this.model.status = camp.status;
     }
   }
 
   update() {
-    this.service.update(this.activatedRoute.snapshot.params.id, this.campaign)
-      .subscribe((res) => { console.log(res) },
-                  (err) => {console.log(err)})
-    this.router.navigate(['/campaign'])
+   for(let cmp of this.campaign){
+    this.service.update(cmp._id, this.model).subscribe((campaign) => {
+      this.campaign = this.model;
+      this.router.navigate(['/']);
+    })
+   }
   }
 }
 

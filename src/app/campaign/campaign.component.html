@@ -42,7 +42,7 @@
                             <mat-icon>more_vert</mat-icon>
                         </button>
                         <mat-menu #menu="matMenu">
-                            <button mat-menu-item (click)="this.service.delete(item._id)">
+                            <button mat-menu-item (click)="selectId(item._id)">
                                 <span>delete</span>
                             </button>
                         </mat-menu>

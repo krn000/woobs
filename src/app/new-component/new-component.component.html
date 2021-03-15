@@ -9,12 +9,12 @@
                     <div class="form-group">
                         <!-- <mat-form-fiield> -->
                         <label for="">Name</label>
-                        <input [(ngModel)]="campaign.campName" value="{{name}}" name="name" type="text" class="form-control rounded-0" disabled>
+                        <input [(ngModel)]="model.campName" name="name" type="text" class="form-control rounded-0" >
                         <!-- </mat-form-fiield> -->
                     </div>
                     <div class="form-group">
                         <label for="">Status</label>
-                        <input [(ngModel)]="campaign.status" value="{{status}}"  name="status" type="text" class=" form-control rounded-0" required>
+                        <input [(ngModel)]="model.status"  name="status" type="text" class=" form-control rounded-0" required>
                     </div>
                     <button (click)="update()" type="button" class="btn btn-primary float-right">Edit Campaign</button>
                 </form>

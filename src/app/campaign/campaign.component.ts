@@ -38,7 +38,9 @@ url = "http://localhost:4200/"
     this.router.navigate(['/create-campaign'])
   }
 
-  selectId(id :String) {
-   console.log(id)
+  selectId(id :any) {
+   this.service.delete(id)
+    .toPromise()
+    window.location.reload()    
   }
 }
